@@ -142,7 +142,7 @@ resource "random_string" "unique" {
 # =============================================================================
 
 module "resource_organization" {
-  source = "./modules/resource-organization"
+  source = "../modules/resource-organization"
 
   management_group_config = var.management_group_config
   policy_definitions      = var.policy_definitions
@@ -155,7 +155,7 @@ module "resource_organization" {
 # =============================================================================
 
 module "network" {
-  source = "./modules/network"
+  source = "../modules/network"
 
   resource_group_name              = module.resource_organization.resource_group_names["rg_network_hub"]
   location                         = var.location
@@ -383,7 +383,7 @@ module "network" {
 # # =============================================================================
 
 module "compute" {
-  source = "./modules/compute"
+  source = "../modules/compute"
   resource_group_name = module.resource_organization.resource_group_names["rg_network_hub"]
   #vm_extensions = var.vm_extensions 
   location = var.location
