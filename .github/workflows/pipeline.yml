@@ -58,7 +58,7 @@ jobs:
 
       - name: Terraform plan
         id: plan
-        run: terraform plan -var-file=./tfvars/terraform.tfvars
+        run: terraform plan -var-file=../deployment/tfvars/terraform.tfvars
 
       # - name: Terraform Apply
       #   id: apply
